@@ -272,13 +272,8 @@ class ModulePrototyper(models.Model):
         """
         # TODO: The image is not always a jpg.
         # 2 ways to do it:
-<<<<<<< HEAD
         #   * find a way to detect image type from the data
         #   * add document as a dependency.
-=======
-            # * find a way to detect image type from the data
-            # * add document as a dependency.
->>>>>>> [IMP] module_prototyper: more comment and docstrings.
         # The second options seems to be better, as Document is a base module.
         return self.File_details(
             os.path.join('static', 'description', 'icon.jpg'),
