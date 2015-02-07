@@ -74,10 +74,11 @@ class ModulePrototyper(models.Model):
         help=('The Module Name will be used as the displayed name of the '
               'exported module.')
     )
-    summary = fields.Char('Summary', required=True, 
-        help=('Enter a summary of your module')
-    )
-    description = fields.Text('Description', required=True, 
+    summary = fields.Char('Summary', required=True,
+                          help=('Enter a summary of your module'))
+    description = fields.Text(
+        'Description',
+        required=True,
         help=('Enter the description of your module, what it does, how to'
               'install, configure and use it, the roadmap or known issues.'
               'The description will be exported in README.rst'),
@@ -85,7 +86,8 @@ class ModulePrototyper(models.Model):
 Module name
 ===========
 
-This module was written to extend the functionality of ... to support ... and allow you to ...
+This module was written to extend the functionality of ... to support ...
+and allow you to ...
 
 Installation
 ============
@@ -134,15 +136,16 @@ Maintainer
 
 This module is maintained by the OCA.
 
-OCA, or the Odoo Community Association, is a nonprofit organization whose mission is to support the collaborative development of Odoo features and promote its widespread use.
+OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.
 
 To contribute to this module, please visit http://odoo-community.org.
         """
     )
-    author = fields.Char('Author', required=True,
-        help=('Enter your name')
-    )
-    maintainer = fields.Char('Maintainer', 
+    author = fields.Char('Author', required=True, help=('Enter your name'))
+    maintainer = fields.Char(
+        'Maintainer',
         help=('Enter the name of the person or organization who will'
               'maintain this module')
     )
