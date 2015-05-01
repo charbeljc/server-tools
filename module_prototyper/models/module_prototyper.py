@@ -25,10 +25,9 @@ import lxml.etree
 import os
 import re
 import textwrap
-import base64
-from datetime import date
 
 from collections import namedtuple
+from datetime import date
 
 from jinja2 import Environment, FileSystemLoader
 
