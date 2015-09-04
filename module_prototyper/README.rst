@@ -42,13 +42,19 @@ You will get a zip file containing your module ready to be installed and complia
 conventions of the OCA. You can then provide the module to a developer who have to implement 
 things like default values or onchange methods.
 
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/149/8.0
+
 Known issues / Roadmap
 ======================
 
  * `#104`_ - Include controllers.py and templates.xml from scaffold.
  * Attach images to the prototype and export them to be used in the 'images' module manifest.
- * Add a Report tab to select and export reports
- * Add a Workflow tab to select and export workflows, nodes, transitions, actions
+ * Export reports
+ * Export workflows, nodes, transitions, actions
+ * Export groups, access rights and record rules
+ * Allow selecting and exporting website stuff
 
 .. _#104: https://github.com/OCA/server-tools/issues/104
 
@@ -86,21 +92,32 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose missio
 
 To contribute to this module, please visit http://odoo-community.org.
 
-Versions
-========
+Changelog
+=========
+
+v0.3
+----
+    Replace ir.ui.model by ir.ui.view in generated xml views
+    Improve pep8 compatibility of generation of models
+
+v0.2
+----
+
+    Renamed from prototype to module_prototyper as discussed in #108
+    menu in Settings that gather element used to create a prototype (menu views, views, fields)
 
 v0.1
 ----
 
 All the features are not implemented but the minimal is done.
-With this version you can:
+With this version:
 
     The set up of openerp.py is covered, description, maintainer, website, name, technical name...
     Views and menus can be set through odoo and gathered in prototype. The files will be automatically generated and add to the data section of the openerp.py. Be aware some advanced feature as domain or context might still missing.
     Dependencies can be set throught the Dependency page
     Custom fields can be added. A file by model will be generated with all the fields of the model. The init.py files are updated accordingly. Be aware that some features are not implemented yet, as the domain, the context.
 
-This version should be enought for:
+This version should be enough to:
 
     set up the client module
     create a new field in a view.
@@ -112,21 +129,3 @@ Features that you might expect in next version:
     Security files (rules, ir.model.access.csv)
     openerp's description editing README.rst and index.html
     module screenshots
-
-v0.2
-----
-
-    Renamed from prototype to module_prototyper as discussed in #108
-    menu in Settings that gather element used to create a prototype (menu views, views, fields)
-
-v0.3
-----
-    Replace ir.ui.model by ir.ui.view in generated xml views
-    Improve pep8 compatibility of generation of models
-
-
-Known bugs
-----------
-
-    icon file extension might be wrong. The extension is hard coded for now. It is planned add Document as dependency to handle it.
-
