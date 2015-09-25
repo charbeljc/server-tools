@@ -385,8 +385,11 @@ class ModulePrototyper(models.Model):
         """Wrapper to generate the menus files."""
         relations = {}
         for menu in self.menu_ids:
-            if menu.action and menu.action.res_model:
-                model = self.unprefix(menu.action.res_model)
+            if menu.action:
+                if not hasattr(menu.action, 'res_model'):
+                    model = 'missing_model'
+                else:
+                    model = self.unprefix(menu.action.res_model)
             else:
                 model = 'ir_ui'
             relations.setdefault(model, []).append(menu)
